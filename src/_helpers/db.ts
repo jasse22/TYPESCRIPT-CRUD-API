@@ -21,7 +21,7 @@ export async function initialize(): Promise<void> {
     const sequelize = new Sequelize(database, user, password, { dialect: 'mysql' });
 
     // Initialize models
-    const { default: userModel } = await import('../users/user.model');
+    const { default: userModel } = await import('../users/users.model');
     db.User = userModel(sequelize);
 
     // Sync models with database
